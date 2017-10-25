@@ -19,7 +19,7 @@ class CreateReservasTable extends Migration
             $table->boolean('estado');
             
             $table->integer('ci')->unsigned();
-            $table->foreign('ci')->references('ci')->on('users')
+            $table->foreign('ci')->references('id')->on('users')
             ->onDelete('cascade');
 
             $table->integer('id_viaje')->length(10)->unsigned();

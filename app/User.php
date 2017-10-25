@@ -16,7 +16,7 @@ class User extends Authenticatable
      */
     protected $table='users';
      protected $fillable = [
-         'nombre','email', 'password','api_token',
+         'nombre','apellido','telefono','ciudad','calle','postal','email', 'usuario','password','api_token','foto'
     ];
 
     /**
@@ -30,5 +30,10 @@ class User extends Authenticatable
 
     public function reservas(){
         return  $this->hasMany('App\Reserva','id_reserva');
+    }
+
+    public function GetName()
+    {
+        return $this->nombre. ' '. $this->apellido;
     }
 }
